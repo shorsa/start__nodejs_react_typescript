@@ -10,7 +10,7 @@ import "./config/db";
 //Routes
 import { authenticationRouter } from "./features/example/example.routes";
 //Helpers
-import ErrorsHandler from './helpers/errorsHandler.helper';
+
 
 class App {
     public express: express.Application;
@@ -36,8 +36,6 @@ class App {
     }
 
     private catchErrors(): void {
-        this.express.use(ErrorsHandler.notFound);
-        this.express.use(ErrorsHandler.errorServerHandler);
     }
 }
 
