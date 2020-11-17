@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Action } from "redux";
 import { ExampleForm, ExampleModel } from "../components/ExampleForm";
 import { exampleAction } from "../store/actions";
-export interface LoginFormContainerProps { }
+export interface ExampleFormContainerProps { }
 
-export function ExampleFormContainer({ }: LoginFormContainerProps): JSX.Element {
+export function ExampleFormContainer({ }: ExampleFormContainerProps): JSX.Element {
   const dispatch: React.Dispatch<Action<ExampleModel>> = useDispatch<Dispatch<Action<ExampleModel>>>();
 
   const handleExample = useCallback(

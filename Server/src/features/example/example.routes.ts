@@ -5,6 +5,6 @@ import { ApiEndpointsConstants } from "../../config/api-endpoints.constants";
 //Controllers
 import * as ExampleController from "./example.controller";
 
-export const authenticationRouter: Router = Router();
+export const exampleRouter: Router = Router();
 
-authenticationRouter.post(ApiEndpointsConstants.TEST, ExampleController.exampleHandler);
+exampleRouter.post(ApiEndpointsConstants.TEST, ExampleController.exampleHandler);

@@ -1,20 +1,20 @@
 import { Action } from "redux";
-import { loginAtServerCompletedAction, loginAtServerStartedAction } from "./saga/handleLogin";
+import { exampleAtServerCompletedAction, exampleAtServerStartedAction } from "./saga/handleExample";
 
-export interface AuthAppState {
+export interface ExampleAppState {
     status: "initial" | "running" | "success" | "error";
     error?: string;
 }
 
-export function exampleReducer(state: AuthAppState = { status: "initial" }, action: Action): AuthAppState {
-    if (loginAtServerStartedAction.is(action)) {
+export function exampleReducer(state: ExampleAppState = { status: "initial" }, action: Action): ExampleAppState {
+    if (exampleAtServerStartedAction.is(action)) {
         return {
             ...state,
             status: "running",
             error: undefined
         };
     }
-    if (loginAtServerCompletedAction.is(action)) {
+    if (exampleAtServerCompletedAction.is(action)) {
         return {
             ...state,
             status: action.status,

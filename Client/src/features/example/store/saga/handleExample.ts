@@ -11,13 +11,13 @@ import { ExampleModel } from "../../components/ExampleForm";
 /*-------------ACTIONS-------------------*/
 import { exampleAction } from "../actions";
 /*-------------REDUCERS-------------------*/
-import { AuthAppState } from "../reducer";
+import { ExampleAppState } from "../reducer";
 
-export const loginAtServerStartedAction = defineAction<AuthAppState>(
-  "AUTH_LOGIN_AT_SERVER_STARTED"
+export const exampleAtServerStartedAction = defineAction<ExampleAppState>(
+  "EXAMPLE_AT_SERVER_STARTED"
 );
-export const loginAtServerCompletedAction = defineAction<AuthAppState>(
-  "AUTH_LOGIN_SUCCESS"
+export const exampleAtServerCompletedAction = defineAction<ExampleAppState>(
+  "EXAMPLE_AT_SERVER_SUCCESS"
 );
 
 export function* handleExampleSaga() {
@@ -28,7 +28,7 @@ export function* handleExampleSaga() {
 
     try {
       yield put(
-        loginAtServerStartedAction({
+        exampleAtServerStartedAction({
           status: "running",
         })
       );
@@ -41,7 +41,7 @@ export function* handleExampleSaga() {
       }
 
       yield put(
-        loginAtServerCompletedAction({
+        exampleAtServerCompletedAction({
           status: "success",
         })
       );
@@ -49,7 +49,7 @@ export function* handleExampleSaga() {
       yield put(push("/home"));
     } catch (e) {
       yield put(
-        loginAtServerCompletedAction({
+        exampleAtServerCompletedAction({
           status: "error",
           error: e.toString(),
         })

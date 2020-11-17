@@ -13,7 +13,7 @@ export interface ExampleModel {
 interface ExamplePageProps {
   value: ExampleModel;
   loading: boolean;
-  onChange: (loginModel: ExampleModel) => void;
+  onChange: (exampleModel: ExampleModel) => void;
 }
 
 const exampleValidationSchema = Yup.object<ExampleModel>({
@@ -22,8 +22,8 @@ const exampleValidationSchema = Yup.object<ExampleModel>({
 
 export function ExampleForm({ value, onChange, loading }: ExamplePageProps): JSX.Element {
 
-  const handleSubmit = useCallback((loginModel: ExampleModel) => {
-    onChange(loginModel);
+  const handleSubmit = useCallback((exampleModel: ExampleModel) => {
+    onChange(exampleModel);
   }, [onChange]);
 
   return (

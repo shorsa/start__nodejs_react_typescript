@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
-import { ExampleRoutes } from "./features/auth";
+import { ExampleRoutes } from "./features/example";
 
 export const AppRoutes = [
   ...ExampleRoutes,
